@@ -1,0 +1,15 @@
+[Unit]
+Description=Zigbee2MQTT
+After=network.target
+
+[Service]
+Type=simple
+Environment=NODE_ENV=production
+ExecStart=/opt/zigbee2mqtt/bin/main.sh
+WorkingDirectory=/opt/zigbee2mqtt
+Restart=always
+RestartSec=10s
+User=zigbee2mqtt
+
+[Install]
+WantedBy=multi-user.target
